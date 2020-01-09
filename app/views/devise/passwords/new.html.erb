@@ -1,0 +1,26 @@
+<div class="row center-xs">
+  <div class="col-xs-8 col-md-6">
+    <div class="box text-left">
+
+<h2>Olvidaste tu contraseña?</h2>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :email, "Correo" %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "Correo", class:"form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Enviar instrucciones para reestablecer contraseña", class:"btn white" %>
+  </div>
+<% end %>
+
+<div class="actions">
+	<%= render "devise/shared/links" %>
+</div>
+
+    </div>    
+  </div>
+</div>

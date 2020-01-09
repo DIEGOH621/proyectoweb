@@ -15,33 +15,16 @@
 
   <body>
 
-    <header>
-      <nav class="be-blue white large-padding sub">
-        <ul class="no-list row center-xs middle-xs">
-          <% if user_signed_in? %>
-            <li class="col-md">
-            <%= link_to "Inicio", root_path %>
-          </li>
-          <li class="col-md">
-            <%= link_to "Contacto", root_path %>
-          </li>
-            <li class="col-md">
-              <%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete %>
-            </li>
-          <%else%>
-            <li class="col-md">
-              <%= link_to "Inicia sesion", new_user_session_path %>
-            </li>
-            <li class="col-md">
-              <%= link_to "Crear cuenta", new_user_registration_path %>
-            </li>
-          <%end%>
-          
-        </ul>
-      </nav>
-    </header>
+    <div class="row">
+    <div class="col-xs">
+        <div class="box">
+            
+<% if user_signed_in? %>
 
-    <!-- navLateral -->
+
+
+
+<!-- navLateral -->
   <section class="full-width navLateral">
     <div class="full-width navLateral-body">
       <div class="full-width navLateral-body-logo text-center tittles be-blue white large-padding sub">
@@ -57,6 +40,49 @@
       </nav>
     </div>
   </section>
+
+<%end%>
+
+
+
+            <div class="row">
+                <div class="col-xs">
+                    <div class="box">
+
+
+<header>
+      <nav class="be-blue white large-padding sub">
+        <ul class="no-list row end-xs middle-xs">
+          <% if user_signed_in? %>
+
+            
+
+
+          <li class="col-md">
+              <%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete %>
+            </li>
+
+
+          
+          <%end%>
+          
+        </ul>
+      </nav>
+    </header>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+    
+
+    
 
     <%= yield %>
   </body>

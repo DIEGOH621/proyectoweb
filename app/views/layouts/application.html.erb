@@ -7,6 +7,8 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
   </head>
 
 
@@ -16,10 +18,6 @@
     <header>
       <nav class="be-blue white large-padding sub">
         <ul class="no-list row center-xs middle-xs">
-          <li class="col-md">
-            <h1 class="no-margin" id="logo"><img src="../../assets/bird.png/" width="30px" height="30px"> Logo</h1>
-          </li>
-          
           <% if user_signed_in? %>
             <li class="col-md">
             <%= link_to "Inicio", root_path %>
@@ -42,6 +40,23 @@
         </ul>
       </nav>
     </header>
+
+    <!-- navLateral -->
+  <section class="full-width navLateral">
+    <div class="full-width navLateral-body">
+      <div class="full-width navLateral-body-logo text-center tittles be-blue white large-padding sub">
+        Ice Company
+      </div>
+      <nav class="full-width be-blue white large-padding sub">
+        <ul class="full-width list-unstyle menu-principal">
+          <li class="col-md">
+            <%= link_to "Inicio", root_path %>
+          </li>
+          <li class='full-width divider-menu-h'></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
 
     <%= yield %>
   </body>

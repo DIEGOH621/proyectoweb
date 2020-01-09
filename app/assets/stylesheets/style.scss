@@ -1,0 +1,53 @@
+html, body{
+	margin: 0px;
+	font-family: 'Open Sans', sans-serif;
+}
+.be-blue{
+	background-color: #2A558C;
+}
+.no-margin{
+	margin: 0px;
+}
+#logo{
+	font-size: 1.5em;
+}
+a{
+	text-decoration: none;
+}
+.white{
+	color: white;
+}
+.large-padding{
+	padding: 2px 2px;
+}
+.no-list{
+	list-style:none;
+
+}
+a:visited{
+	color: inherit;
+}
+.text-left{
+	text-align: left;
+}
+.form-control{
+	border: none;
+	border-bottom: 1px solid;
+	outline: none;
+	width: 100%;
+	display: block;
+	padding: 10px 0px;
+	font-style: 1.2em;
+}
+.field,.top-space,.actions{
+	margin-top: 1em;
+}
+.btn{
+	background-color: #2A558C;
+	border: none;
+	outline: none;
+	text-transform: uppercase;
+	cursor: pointer;
+	font-size: 1.2em;
+	padding: 10px 12px;
+}

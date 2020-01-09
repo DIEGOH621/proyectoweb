@@ -9,7 +9,40 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+
+
   <body>
+
+    <header>
+      <nav class="be-blue white large-padding sub">
+        <ul class="no-list row center-xs middle-xs">
+          <li class="col-md">
+            <h1 class="no-margin" id="logo"><img src="../../assets/bird.png/" width="30px" height="30px"> Logo</h1>
+          </li>
+          
+          <% if user_signed_in? %>
+            <li class="col-md">
+            <%= link_to "Inicio", root_path %>
+          </li>
+          <li class="col-md">
+            <%= link_to "Contacto", root_path %>
+          </li>
+            <li class="col-md">
+              <%= link_to "Cerrar sesion", destroy_user_session_path, method: :delete %>
+            </li>
+          <%else%>
+            <li class="col-md">
+              <%= link_to "Inicia sesion", new_user_session_path %>
+            </li>
+            <li class="col-md">
+              <%= link_to "Crear cuenta", new_user_registration_path %>
+            </li>
+          <%end%>
+          
+        </ul>
+      </nav>
+    </header>
+
     <%= yield %>
   </body>
 </html>

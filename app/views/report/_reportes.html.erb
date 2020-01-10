@@ -1,0 +1,29 @@
+<div class="row center-xs panel">
+    <div class="col-md first-xs">
+        <div class="box">
+            <%= form_tag("/search", method: "get") do %>
+		<%= label_tag(:q, "Filtrar por categoria:") %>
+ 		<%= text_field_tag(:q) %>
+ 		<%= submit_tag("Buscar") %>
+	<% end %>
+        </div>
+    </div>
+    <div class="col-md">
+        <div class="box">
+            <%= form_tag("/search", method: "get") do %>
+		<%= label_tag(:q, "Filtrar por responsable:") %>
+		<%= text_field_tag(:q) %>
+		<%= submit_tag("Buscar") %>
+	<% end %>
+        </div>
+    </div>
+    <div class="col-md">
+        <div class="box">
+            <%= form_tag("/search", method: "get") do %>
+		<%= label_tag(:q, "Filtrar por fecha:") %>
+		<%= date_field_tag(:q, :user) %>
+		<%= submit_tag("Buscar") %>
+	<% end %>
+        </div>
+    </div>
+</div>

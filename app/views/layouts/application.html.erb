@@ -8,9 +8,16 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans+SC&display=swap" rel="stylesheet">
+
+    <link rel="Shortcut Icon" type="image/x-icon" href="<%= asset_path 'book.ico' %>" />
+
   </head>
 
   <body>
+
+    <% if user_signed_in? %>
 
     <!-- navegacion vertical -->
 
@@ -23,14 +30,13 @@
         </div>
         <div class="full-reset" style="background-color:#2B3D51; padding: 10px 0; color:#fff;">
             <figure>
-              <img src="assets/img/logo.png" lass="img-responsive center-box" style="width:55%;">
+              <img src="<%= asset_path 'L.png' %>" lass="img-responsive center-box" style="width:55%;">
             </figure>
               <p class="text-center" style="padding-top: 15px;">Ice Company s.a.</p>
         </div>
         <div class="full-reset nav-lateral-list-menu">
             <ul class="list-unstyled">
-              <li>
-                <%= link_to "Inicio", root_path %>                        
+              <li><%= link_to "Inicio", root_path %>                        
               </li>
                     
               <li>
@@ -51,7 +57,7 @@
 
     <!-- fin navegacion vertical -->
 
-    
+   
 
     <div class="content-page-container full-reset custom-scroll-containers">
 
@@ -64,7 +70,9 @@
                     <span class="all-tittles">Usuario</span>
                 </li>
                 <li  class="tooltips-general exit-system-button" data-href="index.html" data-placement="bottom" title="Salir del sistema">
-                    <i class="zmdi zmdi-power"></i>
+                    <i>
+                      <%= link_to "", destroy_user_session_path, method: :delete, class:"zmdi zmdi-power" %>
+                    </i>
                 </li>
                 
                 <li class="mobile-menu-button visible-xs" style="float: left !important;">
@@ -75,6 +83,8 @@
 
     <!-- fin navegacion top -->
 
+    <%end%>
+
     <!-- panel -->
 
         <%= yield %>
@@ -82,6 +92,8 @@
     <!-- fin panel -->
         
       
+      <% if user_signed_in? %>
+
     <!-- pie de pagina -->
 
         <footer class="footer full-reset">
@@ -106,10 +118,8 @@
 
     <!-- fin pie de pagina -->
 
-    </div>
+    <%end%>
 
-    
-
-    
+    </div>  
   </body>
 </html>
